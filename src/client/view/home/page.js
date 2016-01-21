@@ -24,21 +24,22 @@ detection.controller('DetectionCtrl', function($scope){
         videoObj = {video: true},
         imageNameArray = [],
         detectedFaces = [],
-        NO_OF_CAM_SHOTS = 3,
+        NO_OF_CAM_SHOTS = 2,
         width = 600,
         height = 0,
         webCamStream = null,
         streaming = false;
 
+    //Saves all user images to userfaces directory
+    $scope.saveFaceToDirectory=function(filename,imgString){
+        var imgData = imgString.replace(/^data:image\/png;base64,/, "");
+        console.log("imgData",imgData);
+    };
     //Status message array
     $scope.statusContainer = [];
 
-    //Scoped properties
-    $scope.AUTHENTICATED_MODELS = [];
-
     //Start Web Camera stream
     $scope.startWebCamera = function(){
-        console.log("ddddd");
         navigator.getUserMedia = media;
         navigator.getUserMedia(videoObj, function(stream) {
             webCamVideo.src = window.URL.createObjectURL(stream);
@@ -100,7 +101,7 @@ detection.controller('DetectionCtrl', function($scope){
             canvas.height = height;
             contextCnv.drawImage(webCamVideo, 0, 0, width, height);
             //Name of the image example abc.png
-            operations.saveFaceToDirectory(userName+index+'.png',data);
+            $scope.saveFaceToDirectory(userName+index+'.png',data);
             imageNameArray.push(userName+index+'.png');
         } else {
             clearphoto();
@@ -267,5 +268,5 @@ detection.controller('DetectionCtrl', function($scope){
     //All Function Calls
     $scope.startWebCamera();
     //List all valid user model
-    operations.getModelList($scope.callbackListModels);
+    //operations.getModelList($scope.callbackListModels);
 });
