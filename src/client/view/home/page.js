@@ -30,9 +30,9 @@ detection.controller('DetectionCtrl', function($scope,DocumentService){
         streaming = false;
 
     //Saves all user images to userfaces directory
-    $scope.saveFaceToDirectory=function(filename,imgString){
+    $scope.saveFaceToDirectory = function(filename,imgString){
         var imgData = imgString.replace(/^data:image\/png;base64,/, "");
-        DocumentService.saveDocument("23r", "93939");
+        DocumentService.saveDocument("docId", "docTitle", imgData);
         console.log("imgData",imgData);
     };
     //Status message array

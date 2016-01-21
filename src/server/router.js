@@ -8,9 +8,10 @@ router.use(function (req,res,next) {
 	next();
 });
 
-router.get('/track1/saveDocument/',function (req,res) {
-	console.log("in save Document..." );
-	DOCUMENT.saveDocument(documentId, imageArray);
+router.post('/track1/saveDocument/',function (req,res) {
+	console.log("in save Document...",req);
+	//DOCUMENT.saveDocument(documentId, imageArray);
+	res.send(req.body);
 });
 
 module.exports = router;
