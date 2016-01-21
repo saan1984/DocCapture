@@ -8,7 +8,9 @@ var express = require('express'),
 process.setMaxListeners(0);
 //Set the view location directory, which will be shared to client browser
 app.use(express.static(path.join(__dirname,'../client')));
-
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded())
+app.use(bodyParser.json());
 app.use('/',router);
 
 //Creates an express server

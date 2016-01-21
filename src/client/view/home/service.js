@@ -8,14 +8,11 @@ documentModule.factory('DocumentService',
 		return {
 			saveDocument: function(documentId,conentImageArray ) {
 				var deferred = $q.defer();
-				$http({
-					method: "POST",
-					url: "/track1/saveDocument",
-					body: {
-						documentId: "doc1234",
-						documentContent: conentImageArray
-					}
-				}).then(function(res){
+				var dataContent = {
+					"documentId":documentId,
+					"conentImageArray":conentImageArray
+				};
+				$http.post("/track1/saveDocument", dataContent).success(function(response) {
 					deferred.resolve(res);
 				});
 				return deferred.promise;

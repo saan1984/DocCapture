@@ -9,12 +9,13 @@ router.use(function (req,res,next) {
 });
 
 router.post('/track1/saveDocument/',function (req,res) {
-	console.log("in save Document...",req.params);
-	var documentId = req.body.documentId;
-	var token = req.body.token;
+
+	var documentId = req.body.documentId,
+		documentContent= req.body.conentImageArray;
 	console.log("documentId",documentId);
-	DOCUMENT.saveDocument(documentId, imageArray);
-	res.send(req.body);
+	console.log("documentId",documentContent);
+	DOCUMENT.saveDocument(documentId, documentContent);
+	res.send(documentContent);
 });
 
 module.exports = router;
