@@ -1,9 +1,15 @@
 //Contains Home View controller and directives
 'use strict';
 
+<<<<<<< HEAD
 var detection = angular.module('careApp.face',['ngRoute']);
 
 detection.controller('DetectionCtrl', function($scope,DocumentService){
+=======
+var detection = angular.module('careApp.face',['angular-uuid']);
+
+detection.controller('DetectionCtrl', function($scope,DocumentService, uuid){
+>>>>>>> 3702effec44eeb35812210677e8b68e6cecbb2b3
     var webCamVideo = document.getElementById('webCamVideo'),
         canvas1 = document.getElementById("canvas1"),
         photoList = document.getElementsByClassName('photo'),
@@ -115,8 +121,9 @@ detection.controller('DetectionCtrl', function($scope,DocumentService){
             canvas.width = width;
             canvas.height = height;
             contextCnv.drawImage(webCamVideo, 0, 0, width, height);
+            var hash = uuid.v4();
             //Name of the image example abc.png
-            $scope.saveFaceToDirectory(userName+index+'.png',data);
+            $scope.saveFaceToDirectory(hash,data);
             imageNameArray.push(userName+index+'.png');
         } else {
             clearphoto();
