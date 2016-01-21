@@ -1,6 +1,5 @@
 <div class="view-container" ng-controller="DetectionCtrl"
      style="background:transparent;">
-   Home capture
 
    <!DOCTYPE html>
    <html>
@@ -11,7 +10,7 @@
          .video-container{
             width:600px;
             padding: 20px 20px 0px 20px;
-            background: #2b479a;
+            background: #0098cd;
          }
          .video-container video{
             width:100%;
@@ -69,23 +68,11 @@
                </div>
             </div>
             <video id="webCamVideo" autoplay class="center-block" controls></video>
-            <input type="text" placeholder="Enter Name Of the User." ng-model="userName" id="userName" class="form-control" required>
+            <input type="text" placeholder="Enter Name Of the Document." ng-model="userName" id="userName" class="form-control" >
             <button type="submit" class="btn col-lg-3 btn-success face-btn" id="captureButton" ng-click="makeClicks($event)">
                <span class="glyphicon glyphicon-camera"></span>
                Capture User
             </button>
-            <!--<button type="submit" class="btn col-lg-3 btn-success face-btn" id="trainButton" ng-click="detectFaces($scope)">-->
-               <!--<span class="glyphicon glyphicon-education"></span>-->
-               <!--Detect Faces-->
-            <!--</button>-->
-            <!--<button type="submit" class="btn col-lg-3 btn-success face-btn" id="modelButton" ng-click="createUserFaceModel($event)">-->
-               <!--<span class="glyphicon glyphicon-education"></span>-->
-               <!--Create Model-->
-            <!--</button>-->
-            <!--<button type="submit" class="btn col-lg-3 btn-warning face-btn" id="authButton" ng-click="authenticateFace($event)">-->
-               <!--<span class="glyphicon glyphicon-education"></span>-->
-               <!--Authenticate-->
-            <!--</button>-->
             <button type="submit" class="btn col-lg-3 btn-warning face-btn" id="stopButton" ng-click="stopWebCamera($event)">
                <span class="glyphicon glyphicon-erase"></span>
                Stop WebCam
@@ -121,33 +108,6 @@
                </div>
             </div>
          </form>
-      </div>
-      <div class="col-lg-5 col-sm-4">
-         <h2>Current User Image</h2>
-         <img id="photo-who" class="photo-who" alt="who is the user?">
-         <h2>Valid User Models</h2>
-         <table class="table table-bordered">
-            <thead>
-            <tr>
-               <th>User</th>
-               <th>No Faces</th>
-               <th>Id</th>
-               <th>Delete</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr ng-repeat="model in AUTHENTICATED_MODELS track by model.model_id">
-               <td>{{model.name}}</td>
-               <td>{{model.nb_faces}}</td>
-               <td>{{model.model_id}}</td>
-               <td><span class="btn glyphicon glyphicon-remove" ng-click="deleteModel(model.model_id)"></span></td>
-            </tr>
-            </tbody>
-         </table>
-         <h2>Status Message</h2>
-         <ul class="status-container" id="status-container">
-            <li ng-repeat="aStatus in statusContainer">{{aStatus}}</li>
-         </ul>
       </div>
    </div>
    </body>

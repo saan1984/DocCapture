@@ -88,9 +88,7 @@ detection.controller('DetectionCtrl', function($scope,DocumentService){
         var context = canvas1.getContext('2d'),
             data=null,
             userName = document.getElementById("userName").value;
-        if(userName == ''){
-            return false;
-        }else if (width && height) {
+        if (width && height) {
             canvas1.width = width;
             canvas1.height = height;
             context.drawImage(webCamVideo, 0, 0, width, height);
