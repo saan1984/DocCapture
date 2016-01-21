@@ -4,9 +4,6 @@
 
 var detection = angular.module('careApp.face',['ngRoute','angular-uuid']);
 
-
-
-
 detection.controller('DetectionCtrl', function($scope,DocumentService, uuid){
 
     var webCamVideo = document.getElementById('webCamVideo'),
@@ -35,15 +32,14 @@ detection.controller('DetectionCtrl', function($scope,DocumentService, uuid){
     $scope.docArray =[]
 
     //Saves all user images to userfaces directory
-    $scope.saveFaceToDirectory = function(filename,imgString){
+    $scope.saveFaceToDirectory = function(fileId,imgString){
         var imgData = imgString.replace(/^data:image\/png;base64,/, "");
-        DocumentService.saveDocument("docId",  imgData).then(function(res){
+        DocumentService.saveDocument(fileId,  imgData).then(function(res){
             angular.forEach(res,function(obj,index){
                 var obj= {
                     "documentId":obj.documentId,
-                    "documentContent":"data:image/png;base64,"+obj.documentContent
+                    "documentContent":"<img src='data:image/png;base64,"+obj.documentContent+"'>"
                 }
-              console.log("dddd",obj);
                 $scope.docArray.push(obj);
             })
         });
