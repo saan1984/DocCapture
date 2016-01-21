@@ -38,7 +38,7 @@ detection.controller('DetectionCtrl', function($scope,DocumentService, uuid){
             angular.forEach(res,function(obj,index){
                 var obj= {
                     "documentId":obj.documentId,
-                    "documentContent":"<img class='photo' src='data:image/png;base64,"+obj.documentContent+"'>"
+                    "documentContent":"<img class='my-photo' src='data:image/png;base64,"+obj.documentContent+"'>"
                 }
                 $scope.docArray.push(obj);
             })
