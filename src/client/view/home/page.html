@@ -1,4 +1,4 @@
-<div class="view-container" ng-controller="DetectionCtrl"
+<div class="view-container md-whiteframe-6dp" ng-controller="DetectionCtrl"
      style="background:transparent;">
 
    <!DOCTYPE html>
@@ -10,10 +10,14 @@
          .video-container{
             width:100%;
             padding: 20px 20px 0px 20px;
-            background: #0098cd;
+            background: aliceblue;
+            text-align:center;
          }
          .video-container video{
             width:100%;
+         }
+         .capture-button{
+            margin-top:100px;
          }
          .video-container .output{
             height: 50px;
@@ -41,21 +45,22 @@
          .status-container li{
             color:white;
          }
+         .my-header{
+            color: darkgray;
+         }
       </style>
    </head>
    <body class="container ">
    <div class="row">
       <div>
          <form class="video-container" id="faceForm">
-            <div class="output row  center-block">
-               <div class="col-xs-2">
-                  <img id="photo1" class="photo">
-               </div>
-
+            <h1 class="text-default my-header">Capture Document Image</h1>
+            <div class="output row">
+               <img id="photo1" class="photo">
             </div>
             <video id="webCamVideo" autoplay class="center-block" controls></video>
 
-            <md-button type="submit" class="md-fab" ng-click="makeClicks($event)">
+            <md-button  type="submit" class="md-fab capture-button" ng-click="makeClicks($event)">
                <md-icon md-font-icon="material-icons glyphicon glyphicon-camera my-icon"></md-icon>
             </md-button>
             <canvas id="canvas1" style="display: none">
