@@ -7,8 +7,8 @@ var request = require('request'),
 	});
 
 module.exports ={
-	saveDocument: function(documentID,imageArray){
-		documentsDB.set(documentID, imageArray);
+	saveDocument: function(documentID, documentContent){
+		documentsDB.set(documentID, documentContent);
 	}
 };
 
