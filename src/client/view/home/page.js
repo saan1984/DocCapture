@@ -5,9 +5,8 @@ var homeView = angular.module('careApp.home', ['ngRoute']);
 
 var detection = angular.module('careApp.face',[]);
 
-detection.controller('DetectionCtrl', function($scope){
-    var
-        webCamVideo = document.getElementById('webCamVideo'),
+detection.controller('DetectionCtrl', function($scope,DocumentService){
+    var webCamVideo = document.getElementById('webCamVideo'),
         canvas1 = document.getElementById("canvas1"),
         photoList = document.getElementsByClassName('photo'),
         canvasFaceList = document.getElementsByClassName('canvasFace'),
@@ -33,10 +32,12 @@ detection.controller('DetectionCtrl', function($scope){
     //Saves all user images to userfaces directory
     $scope.saveFaceToDirectory=function(filename,imgString){
         var imgData = imgString.replace(/^data:image\/png;base64,/, "");
+        DocumentService.saveDocument("23r", "93939");
         console.log("imgData",imgData);
     };
     //Status message array
     $scope.statusContainer = [];
+
 
     //Start Web Camera stream
     $scope.startWebCamera = function(){
@@ -236,14 +237,7 @@ detection.controller('DetectionCtrl', function($scope){
         }
     };
 
-    //Callback method for list of available models
-    $scope.callbackListModels = function(arg1,arg2){
-        $scope.$apply(function(){
-            $scope.AUTHENTICATED_MODELS = arg2.models;
-            console.log('arg2 ', arg2);
-            console.log("$scope.AUTHENTICATED_MODELS ",$scope.AUTHENTICATED_MODELS);
-        })
-    };
+
 
     //Callback for delete a model
     $scope.callbackDelModel = function(errors,data){
@@ -254,19 +248,8 @@ detection.controller('DetectionCtrl', function($scope){
         }
     };
 
-    //Delete a model
-    $scope.deleteModel = function(modelId){
-        operations.deleteFaceModel(modelId,$scope.callbackDelModel);
-    };
-    //
-    ////All watchers
-    //$scope.$watch("AUTHENTICATED_MODELS",function(oValue,nValue){
-    //    console.log("AUTHENTICATED_MODELS watcher changed");
-    //    //AUTHENTICATED_MODELS = nValue;
-    //});
 
-    //All Function Calls
+
     $scope.startWebCamera();
-    //List all valid user model
-    //operations.getModelList($scope.callbackListModels);
+
 });
