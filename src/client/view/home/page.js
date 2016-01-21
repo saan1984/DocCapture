@@ -257,12 +257,12 @@ detection.controller('DetectionCtrl', function($scope){
     $scope.deleteModel = function(modelId){
         operations.deleteFaceModel(modelId,$scope.callbackDelModel);
     };
-
-    //All watchers
-    $scope.$watch("AUTHENTICATED_MODELS",function(oValue,nValue){
-        console.log("AUTHENTICATED_MODELS watcher changed");
-        AUTHENTICATED_MODELS = nValue;
-    });
+    //
+    ////All watchers
+    //$scope.$watch("AUTHENTICATED_MODELS",function(oValue,nValue){
+    //    console.log("AUTHENTICATED_MODELS watcher changed");
+    //    //AUTHENTICATED_MODELS = nValue;
+    //});
 
     //All Function Calls
     $scope.startWebCamera();
