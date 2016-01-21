@@ -103,8 +103,7 @@ detection.controller('DetectionCtrl', function($scope,DocumentService, uuid){
     //Takes a picture and draws into the canvas
     $scope.takepicture = function (index,photo,canvas) {
         var context = canvas1.getContext('2d'),
-            data=null,
-            userName = document.getElementById("userName").value;
+            data=null;
         if (width && height) {
             canvas1.width = width;
             canvas1.height = height;
@@ -119,7 +118,7 @@ detection.controller('DetectionCtrl', function($scope,DocumentService, uuid){
             var hash = uuid.v4();
             //Name of the image example abc.png
             $scope.saveFaceToDirectory(hash,data);
-            imageNameArray.push(userName+index+'.png');
+            imageNameArray.push(hash+index+'.png');
         } else {
             clearphoto();
         }
