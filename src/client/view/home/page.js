@@ -1,15 +1,14 @@
 //Contains Home View controller and directives
 'use strict';
 
-<<<<<<< HEAD
-var detection = angular.module('careApp.face',['ngRoute']);
 
-detection.controller('DetectionCtrl', function($scope,DocumentService){
-=======
-var detection = angular.module('careApp.face',['angular-uuid']);
+var detection = angular.module('careApp.face',['ngRoute','angular-uuid']);
+
+
+
 
 detection.controller('DetectionCtrl', function($scope,DocumentService, uuid){
->>>>>>> 3702effec44eeb35812210677e8b68e6cecbb2b3
+
     var webCamVideo = document.getElementById('webCamVideo'),
         canvas1 = document.getElementById("canvas1"),
         photoList = document.getElementsByClassName('photo'),
