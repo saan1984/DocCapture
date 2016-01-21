@@ -16,5 +16,5 @@ var server = app.listen(9000,function () {
 		var os = require('os'),
 			host = os.hostname(),
 			port = server.address().port;
-		console.log('> Track1 app listening at http://%s:%s' + host + port);
+	console.log('> Track1 app listening at http://%s:%s' + host + port);
 });
