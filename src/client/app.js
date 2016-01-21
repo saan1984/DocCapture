@@ -5,6 +5,7 @@ var careApp = angular.module('careApp',[
 	'ngSanitize',
 	'ngAria',
 	'ngMaterial',
+	'careApp.face',
 	'careApp.route',
 	'careApp.home'
 

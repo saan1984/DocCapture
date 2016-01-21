@@ -9,8 +9,10 @@ router.use(function (req,res,next) {
 	next();
 });
 
-router.get('/track1/capture/',function (req,res) {
+router.get('/track1/saveDocument/',function (req,res) {
 	logger.debug("in capture content..." );
+
+	saveDocument
 });
 
 module.exports = router;

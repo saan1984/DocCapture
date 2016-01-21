@@ -7,7 +7,7 @@ module.exports ={
      * @param res
      * @returns {string}
      */
-    getAlertDetails: function(req,res){
+    saveDocument: function(req,res){
 
     }
 };

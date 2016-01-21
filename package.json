@@ -4,8 +4,7 @@
   "description": "track1 pages",
   "author": "Sandeep Kumar Patel",
   "license": "ISC",
-  "repository":{
-  },
+  "repository": {},
   "dependencies": {
     "accept-language": "2.0.16",
     "angular": "1.4.8",
@@ -33,6 +32,7 @@
     "npm": "3.5.3",
     "q": "^1.4.1",
     "request": "2.67.0",
+    "tinydb": "0.1.0",
     "winston": "2.1.1"
   },
   "devDependencies": {

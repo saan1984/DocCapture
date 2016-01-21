@@ -8,7 +8,7 @@ careAppRoute.config(['$routeProvider', function($routeProvider) {
     });
     $routeProvider.when('/home', {
         templateUrl: '/home/page.html',
-        controller: 'HomePageCtrl'
+        controller: 'DetectionCtrl'
     });
    $routeProvider.otherwise({redirectTo: '/home'});
 }]);
