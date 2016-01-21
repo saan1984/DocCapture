@@ -13,7 +13,7 @@ documentModule.factory('DocumentService',
 					"conentImageArray":conentImageArray
 				};
 				$http.post("/track1/saveDocument", dataContent).success(function(response) {
-					deferred.resolve(res);
+					deferred.resolve(response);
 				});
 				return deferred.promise;
 			}
