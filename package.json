@@ -4,6 +4,9 @@
   "description": "track1 pages",
   "author": "Sandeep Kumar Patel",
   "license": "ISC",
+  "repository":{
+
+  },
   "dependencies": {
     "accept-language": "2.0.16",
     "angular": "1.4.8",
