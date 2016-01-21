@@ -1,12 +1,14 @@
 var request = require('request'),
-	TinyDB = require('tinydb'),
-	documentDB = new TinyDB('./documents.db');
+	redis = require("redis"),
+	documentsDB = redis.createClient();
+
+	documentsDB.on("error", function (err) {
+		console.log("Error " + err);
+	});
 
 module.exports ={
-	saveDocument: function(req,res){
-		documentDB.insertItem("Sandeep", "123", function(){
-			console.log(".insertItem(item, idx, callback)");
-		});
+	saveDocument: function(documentID,imageArray){
+		documentsDB.set(documentID, imageArray);
 	}
 };
 
