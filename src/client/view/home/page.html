@@ -1,4 +1,155 @@
-<div class="view-container" ng-controller="HomePageCtrl" style="background:transparent;">
+<div class="view-container" ng-controller="HomePageCtrl"
+     style="background:transparent;">
    Home capture
-</div>
+
+   <!DOCTYPE html>
+   <html>
+   <head lang="en">
+      <meta charset="UTF-8">
+      <title>Global Tax Face Authentication</title>
+      <style>
+         .video-container{
+            width:600px;
+            padding: 20px 20px 0px 20px;
+            background: #2b479a;
+         }
+         .video-container video{
+            width:100%;
+         }
+         .video-container .output{
+            height: 50px;
+         }
+         .video-container .output2{
+            height: 100px;
+         }
+         .video-container .output2 canvas{
+            display: none;
+         }
+         .btn.face-btn{
+            margin: 2px;
+            padding: 0px;
+         }
+         .photo-who{
+            height: 100px;
+            width: auto;
+         }
+         .status-container{
+            padding: 10px;
+            height: 200px;
+            background:black;
+            list-style-type: none;
+         }
+         .status-container li{
+            color:white;
+         }
+      </style>
+   </head>
+   <body class="container ">
+   <div class="row">
+      <div class="col-lg-7 col-sm-8">
+         <form class="video-container" id="faceForm">
+            <div class="output row  center-block">
+               <div class="col-xs-2">
+                  <img id="photo1" class="photo">
+               </div>
+               <div class="col-xs-2">
+                  <img id="photo2" class="photo">
+               </div>
+               <div class="col-xs-2">
+                  <img id="photo3" class="photo">
+               </div>
+               <div class="col-xs-2">
+                  <img id="photo4" class="photo">
+               </div>
+               <div class="col-xs-2">
+                  <img id="photo5" class="photo">
+               </div>
+               <div class="col-xs-2">
+                  <img id="photo6" class="photo">
+               </div>
+            </div>
+            <video id="webCamVideo" autoplay class="center-block" controls></video>
+            <input type="text" placeholder="Enter Name Of the User." ng-model="userName" id="userName" class="form-control" required>
+            <button type="submit" class="btn col-lg-3 btn-success face-btn" id="captureButton" ng-click="makeClicks($event)">
+               <span class="glyphicon glyphicon-camera"></span>
+               Capture User
+            </button>
+            <button type="submit" class="btn col-lg-3 btn-success face-btn" id="trainButton" ng-click="detectFaces($scope)">
+               <span class="glyphicon glyphicon-education"></span>
+               Detect Faces
+            </button>
+            <button type="submit" class="btn col-lg-3 btn-success face-btn" id="modelButton" ng-click="createUserFaceModel($event)">
+               <span class="glyphicon glyphicon-education"></span>
+               Create Model
+            </button>
+            <button type="submit" class="btn col-lg-3 btn-warning face-btn" id="authButton" ng-click="authenticateFace($event)">
+               <span class="glyphicon glyphicon-education"></span>
+               Authenticate
+            </button>
+            <button type="submit" class="btn col-lg-3 btn-warning face-btn" id="stopButton" ng-click="stopWebCamera($event)">
+               <span class="glyphicon glyphicon-erase"></span>
+               Stop WebCam
+            </button>
+            <button type="submit" class="btn col-lg-3 btn-warning face-btn" id="startButton" ng-click="startWebCamera($event)">
+               <span class="glyphicon glyphicon-erase"></span>
+               Start WebCam
+            </button>
+            <button type="submit" class="btn col-lg-3 btn-warning face-btn" id="clearButton">
+               <span class="glyphicon glyphicon-erase"></span>
+               Clear
+            </button>
+            <canvas id="canvas1" style="display: none">
+            </canvas>
+            <div class="output2 row  center-block">
+               <div class="col-xs-2">
+                  <canvas id="canvasFace1" class="canvasFace"></canvas>
+               </div>
+               <div class="col-xs-2">
+                  <canvas id="canvasFace2" class="canvasFace"></canvas>
+               </div>
+               <div class="col-xs-2">
+                  <canvas id="canvasFace3" class="canvasFace"></canvas>
+               </div>
+               <div class="col-xs-2">
+                  <canvas id="canvasFace4" class="canvasFace"></canvas>
+               </div>
+               <div class="col-xs-2">
+                  <canvas id="canvasFace5" class="canvasFace"></canvas>
+               </div>
+               <div class="col-xs-2">
+                  <canvas id="canvasFace6" class="canvasFace"></canvas>
+               </div>
+            </div>
+         </form>
+      </div>
+      <div class="col-lg-5 col-sm-4">
+         <h2>Current User Image</h2>
+         <img id="photo-who" class="photo-who" alt="who is the user?">
+         <h2>Valid User Models</h2>
+         <table class="table table-bordered">
+            <thead>
+            <tr>
+               <th>User</th>
+               <th>No Faces</th>
+               <th>Id</th>
+               <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="model in AUTHENTICATED_MODELS track by model.model_id">
+               <td>{{model.name}}</td>
+               <td>{{model.nb_faces}}</td>
+               <td>{{model.model_id}}</td>
+               <td><span class="btn glyphicon glyphicon-remove" ng-click="deleteModel(model.model_id)"></span></td>
+            </tr>
+            </tbody>
+         </table>
+         <h2>Status Message</h2>
+         <ul class="status-container" id="status-container">
+            <li ng-repeat="aStatus in statusContainer">{{aStatus}}</li>
+         </ul>
+      </div>
+   </div>
+   </body>
+   </html>
 </div>
