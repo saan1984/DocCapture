@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html ng-app="careApp" class="no-js lt-ie9 lt-ie8 lt-ie7" > <![endif]-->
+<!--[if IE 7]>
+<html ng-app="careApp" class="no-js lt-ie9 lt-ie8">  <![endif]-->
+<!--[if IE 8]>
+<html ng-app="careApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="careApp" class="no-js"> <!--<![endif]-->
+<html ng-app="careApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Track1 Capture Document</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico"/>
+    <link rel="stylesheet" href="app.css"/>
+</head>
+<body layout="row" ng-cloak>
+    <div flex layout="column" tabIndex="-1" role="main">
+    <care-header layout="row" app-name=""></care-header>
+    <md-content class="content-body">
+        <ng-view  layout="row" layout-align="center"></ng-view>
+    </md-content>
+</div>
+    <script src="vendor-script.js"></script>
+    <script src="app-script.js"></script>
+    <script src="templates.js"></script>
+</body>
+</html>

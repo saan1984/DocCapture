@@ -1,0 +1,20 @@
+<div class="care-alert">
+    <md-fab-toolbar ng-if="!alertContent.error" class="animated fadeInUp" md-open="false"
+                    md-direction="right" ng-show="isAlertLoaded">
+        <md-fab-trigger class="align-with-text">
+            <md-button class="md-fab md-warn animated infinite pulse" aria-label="alert">
+                <md-icon md-font-icon="material-icons glyphicon glyphicon-bell"></md-icon>
+            </md-button>
+        </md-fab-trigger>
+        <md-toolbar>
+            <md-fab-actions  class="md-toolbar-tools md-warn">
+                <p class="alert-content"
+                   ng-bind-html="alertContent.content"></p>
+                <md-button aria-label="alert">
+                    <md-icon md-font-icon="material-icons glyphicon glyphicon-bell">
+                    </md-icon>
+                </md-button>
+            </md-fab-actions>
+        </md-toolbar>
+    </md-fab-toolbar>
+</div>

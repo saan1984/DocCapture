@@ -1,0 +1,257 @@
+@hy-white: #ffffff; .hy-bg-white { background-color: @hy-white; }
+@hy-gray1: #dcdcdc; .hy-bg-gray1 { background-color: @hy-gray1; }
+@hy-gray2: #c7c7c7; .hy-bg-gray2 { background-color: @hy-gray2; }
+@hy-gray3: #b8b8b8; .hy-bg-gray3 { background-color: @hy-gray3; }
+@hy-gray4: #969696; .hy-bg-gray4 { background-color: @hy-gray4; }
+@hy-gray5: #505050; .hy-bg-gray5 { background-color: @hy-gray5; }
+@hy-gray6: #404040; .hy-bg-gray6 { background-color: @hy-gray6; }
+@hy-black: #000000; .hy-bg-black { background-color: @hy-black; }
+
+@hy-bluegray1: #f3f8fe; .hy-bg-bluegray1 { background-color: @hy-bluegray1; }
+@hy-bluegray2: #f3f5f8; .hy-bg-bluegray2 { background-color: @hy-bluegray2; }
+@hy-bluegray3: #e3eaf3; .hy-bg-bluegray3 { background-color: @hy-bluegray3; }
+@hy-bluegray4: #c0d0e4; .hy-bg-bluegray4 { background-color: @hy-bluegray4; }
+@hy-bluegray5: #7090ab; .hy-bg-bluegray5 { background-color: @hy-bluegray5; }
+@hy-bluegray6: #486c8f; .hy-bg-bluegray6 { background-color: @hy-bluegray6; }
+@hy-bluegray7: #193048; .hy-bg-bluegray7 { background-color: @hy-bluegray7; }
+@hy-bluegray8: #131f2b; .hy-bg-bluegray8 { background-color: @hy-bluegray8; }
+
+@hy-blue1: #365ebf; .hy-bg-blue1 { background-color: @hy-blue1; }
+@hy-blue2: #2546ac; .hy-bg-blue2 { background-color: @hy-blue2; }
+
+@hy-charcolgrey2: #737373; .hy-bg-charcolgrey { background-color: @hy-charcolgrey2; }
+
+@hy-brightblue1: #0098cd; .hy-bg-brightblue1 { background-color: @hy-brightblue1; }
+@hy-brightblue2: #007da9; .hy-bg-brightblue2 { background-color: @hy-brightblue2; }
+@hy-brightblue3: #264a6d; .hy-bg-brightblue3 { background-color: @hy-brightblue3; }
+
+@hy-green1: #e1eed3; .hy-bg-green1 { background-color: @hy-green1; }.hy-text-green1{ color: @hy-green1;}
+@hy-green2: #92ce85; .hy-bg-green2 { background-color: @hy-green2; }.hy-text-green2{ color: @hy-green2;}
+@hy-green3: #56b349; .hy-bg-green3 { background-color: @hy-green3; }.hy-text-green3{ color: @hy-green3;}
+@hy-green4: #2ca01c; .hy-bg-green4 { background-color: @hy-green4; }.hy-text-green4{ color: @hy-green4;}
+@hy-green5: #356a2e; .hy-bg-green5 { background-color: @hy-green5; }.hy-text-green5{ color: @hy-green5;}
+
+@hy-orange1: #fbe0a3; .hy-bg-orange1 { background-color: @hy-orange1; }.hy-text-orange1{ color: @hy-orange1;}
+@hy-orange2: #f2b835; .hy-bg-orange2 { background-color: @hy-orange2; }.hy-text-orange2{ color: @hy-orange2;}
+@hy-orange3: #e77700; .hy-bg-orange3 { background-color: @hy-orange3; }.hy-text-orange3{ color: @hy-orange3;}
+
+@hy-red1: #ef797e; .hy-bg-red1 { background-color: @hy-red1; }
+@hy-red2: #e33d43; .hy-bg-red2 { background-color: @hy-red2; }
+@hy-red3: #a9282d; .hy-bg-red3 { background-color: @hy-red3; }
+
+@hy-purple1: #c72f79; .hy-bg-purple1 { background-color: @hy-purple1; }
+@hy-purple2: #a32763; .hy-bg-purple2 { background-color: @hy-purple2; }
+@hy-purple3: #871b45; .hy-bg-purple3 { background-color: @hy-purple3; }
+
+@font-face { font-family: 'DINNextLTPro-Regular'; src: url("/fonts/DINNextLTPro-Regular.woff") format("woff"); }
+@font-face { font-family: 'DINNextLTPro-Medium'; src: url("/fonts/DINNextLTPro-Medium.woff") format("woff"); }
+@font-face { font-family: 'DINNextLTPro-Light'; src: url("/fonts/DINNextLTPro-Light.woff") format("woff"); }
+@font-face { font-family: 'HelveticaNeue-Roman'; src: url("/fonts/HelveticaNeueLTW1G-Roman.woff") format("woff"); }
+@font-face { font-family: 'HelveticaNeue-Bold'; src: url("/fonts/HelveticaNeueLTW1G-Bd.woff") format("woff"); }
+@font-face { font-family: 'HelveticaNeue-Light'; src: url("/fonts/HelveticaNeueLTW1G-Lt.woff") format("woff"); }
+@font-face { font-family: 'HelveticaNeue-Italic'; src: url("/fonts/HelveticaNeueLTW1G-It.woff") format("woff"); }
+
+@font-family-fallback: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// bootstrap starts
+
+@gray-darker: @hy-gray6;
+@gray-dark: @hy-gray6; // todo fix
+@gray: @hy-gray4;
+@gray-light: @hy-gray2;
+@gray-lighter: @hy-gray1;
+
+@brand-primary: @hy-blue1;
+@brand-success: @hy-green3;
+@brand-info: @hy-brightblue1;
+@brand-warning: @hy-orange2;
+@brand-danger: @hy-red2;
+
+@text-color: @hy-gray6;
+
+//@icon-font-path: '../../node_modules/bootstrap/fonts/';
+
+@font-family-sans-serif: 'HelveticaNeue-Roman', @font-family-fallback;
+@font-size-base: 14px;
+@font-size-h1: 30px;
+@font-size-h2: 22px;
+@font-size-h3: 20px;
+@font-size-h4: 16px;
+
+@border-radius-base: 2px;
+@border-radius-small: 2px;
+
+.hy-text { font-family: @font-family-sans-serif; }
+.hy-text-light { font-family: 'HelveticaNeue-Light', @font-family-fallback; }
+.hy-text-bold { font-family: 'HelveticaNeue-Bold', @font-family-fallback; }
+.hy-text-italic { font-family: 'HelveticaNeue-Italic', @font-family-fallback; }
+
+.h1 { .hy-text-light; }
+.h2 { .hy-text-bold; }
+.h3 { .hy-text-light; }
+.h4 { .hy-text-bold; }
+
+.hy-heading .btn { vertical-align: top; }
+
+// forms
+@input-color-placeholder:'grey';
+@input-color: @hy-gray6;
+.form-control-feedback { color: @input-color-placeholder; }
+.form-group.required .control-label:after { content: " *"; color: @hy-red1; }
+
+// copied from bootstrap/less/mixins/vendor-prefixes.less
+// and added ".hy-text-italic" for harmony placeholder text
+.placeholder(@color: @input-color-placeholder) {
+  &::-moz-placeholder { color: @color; .hy-text-italic; opacity: 1; } // Firefox
+  &:-ms-input-placeholder { color: @color; .hy-text-italic; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: @color; .hy-text-italic; } // Safari and Chrome
+}
+
+@nav-link-hover-bg: @hy-brightblue2;
+@navbar-default-link-color: @hy-bluegray6;
+@navbar-default-link-hover-color: @hy-gray1;
+@navbar-default-link-hover-bg: @hy-brightblue2;
+
+.container-fluid { margin: 0; padding: 0;  }
+.row { margin: 0 }
+
+.hy-number-base { font-family: 'DINNextLTPro-Regular', @font-family-fallback; }
+.hy-number-light { font-family: 'DINNextLTPro-Light', @font-family-fallback; }
+.hy-number-xl { .hy-number-light; font-size: 48px; }
+.hy-number-lg { .hy-number-base; font-size: 34px; }
+.hy-number-md { .hy-number-base; font-size: 28px; }
+.hy-number { .hy-number-base; font-size: 15px; }
+.hy-number-desc { text-transform: uppercase; color: @hy-bluegray6; }
+.hy-table { font-size: 13px; }
+.hy-th { .hy-text-bold; text-transform: uppercase; font-size: 13px; color: @hy-bluegray6; background-color: @hy-bluegray3; }
+.hy-td { font-size: 13px; }
+.hy-label-sm { text-transform: uppercase; font-size: 13px; color: @hy-bluegray6; }
+.hy-small { font-size: 12px; }
+
+// tables
+.hy-table th { .hy-th; }
+
+.hy-badge-pod {
+  font-size: 16px;
+  border: 1px solid #fff;
+  border-radius: 18px;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 36px;
+  color: @hy-gray6;
+}
+
+.hy-badge { .badge; background-color: @hy-bluegray6; };
+.hy-badge-error { .hy-badge; background: @hy-red2; }
+.hy-badge-error-text { font-size: 12px; color: @hy-red2; text-transform: uppercase; }
+
+.hy-global-header {
+  background-color: @hy-bluegray3;
+  color: @hy-bluegray6;
+  margin-top: 0;
+  margin-left: -20px;
+  margin-right: -15px;
+}
+.hy-global-header .hi { font-size: 18px; }
+
+.hy-leftnav {
+  position: fixed;
+  width:16.5%;
+  height:100%;
+  background-color: @hy-bluegray7;
+  color: @hy-bluegray4;
+  margin-left: -15px;
+  z-index: 1;
+}
+.hy-leftnav > div { height: 100%; }
+.hy-leftnav ul { .nav; .nav-stacked; }
+.hy-leftnav a { color: @hy-bluegray4; }
+.hy-leftnav a:hover { color: @hy-gray1; }
+.hy-leftnav .hi { font-size: 22px; margin-right: 0.3em; }
+
+// leftnav logo
+.leftnav-logo { padding: 15px; }
+.leftnav-logo img { width:100%;  margin-bottom: 10px; }
+
+// trowser
+.hy-trowser.modal-dialog { left:0; width: 100%; margin: 0; height: 100%; min-height: 100%; }
+.hy-trowser .modal-content { min-height: 100%; }
+// z-index is to appear above the scrollable body
+.hy-trowser .modal-header { position: fixed; width: 100%; background-color: @hy-bluegray6; color: @hy-gray1; z-index: 1; }
+.hy-trowser .modal-body { min-height: 100%; overflow: auto; margin: 50px 0; }
+.hy-trowser .modal-footer { position: fixed; bottom: 0; width: 100%; background-color: @hy-bluegray7; }
+.hy-trowser .footer-left { text-align: left; }
+.hy-trowser-content { min-height: 100%; }
+
+.hy-close {
+  .close;
+  .opacity(0.8);
+  font-weight: inherit;
+  color: @hy-bluegray1;
+  &:hover, &:focus {
+    .opacity(0.5);
+    color: @hy-gray1;
+  }
+}
+
+// linear flow
+.hy-flow {
+  padding: 2em 0;
+  border-top: 2px solid @hy-gray2;
+  border-bottom: 2px solid @hy-gray2;
+  text-align: center;
+}
+.hy-flow-step { display: inline-block; width: 15%; text-align: center; position: relative; z-index: 0; vertical-align: top; }
+.hy-flow-step .hy-label-sm { margin-top: 10px; color: @hy-gray3; }
+.hy-flow-line { height: 2px; border: 1px solid @hy-gray3; position: absolute; top: 17px; z-index: -1; }
+
+.hy-flow-badge {
+  display: inline-block;
+  border: 2px solid @hy-gray3;
+  border-radius: 17px;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 28px;
+  background-color: @hy-white;
+}
+
+.hy-flow-badge > span {
+  .hy-flow-badge;
+  border-style: none;
+  border-radius: 13px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: @hy-gray3;
+  background-color: @hy-white;
+}
+
+.disabled .hy-flow-badge > span { background-color: @hy-gray3; color: @hy-white; }
+.active .hy-flow-badge > span { background-color: @hy-blue1; color: @hy-white; }
+.active .hy-label-sm { color: @hy-blue1; }
+.hy-flow-step:first-child .hy-flow-line { width: 50%; margin-left: 50%; }
+.hy-flow-step .hy-flow-line { width: 100%; }
+.hy-flow-step:last-child .hy-flow-line { width: 50%; margin-right: 50%; }
+
+.hy-jumbo { text-align: center; background-color: @hy-bluegray1; padding: 1em; }
+.hy-jumbo-text { .h3; text-align: center; padding:20px; }
+
+// ng-grid
+.hy-grid { border: 1px solid rgb(212,212,212); }
+
+// helpers
+.align-right { text-align: right; }
+.inline-block { display: inline-block; }
+
+// harmony color demo
+.hy-color-group { border-bottom: 1px solid @hy-gray4; }
+.hy-color-row { height: 55px; margin-top: 5px; }
+.hy-color-square { height: 50px; width: 50px; display: inline-block; }
+.hy-color-info { display: inline-block; }
+.hy-color-code, .hy-color-class { display: inline-block; font-family: courier, monospace; }
