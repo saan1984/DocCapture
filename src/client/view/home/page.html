@@ -90,7 +90,7 @@
       </div>
    </div>
    <div class="row">
-      <table>
+      <table class="table table-default table-bordered table-alernate">
          <thead>
          <tr>
             <th>DocumentID</th>
@@ -100,7 +100,7 @@
          <tbody>
          <tr ng-repeat="doc in docArray">
             <td>{{doc.documentId}}</td>
-            <td>{{doc.documentContent}}</td>
+            <td><a ng-src="">{{doc.documentId}}</a></td>
          </tr>
          <tbody>
       </table>

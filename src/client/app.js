@@ -7,6 +7,5 @@ var careApp = angular.module('careApp',[
 	'ngMaterial',
 	'careApp.face',
 	'careApp.route',
-	'careApp.home',
 	'careApp.service'
 ]);

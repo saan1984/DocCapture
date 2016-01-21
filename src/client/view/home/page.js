@@ -1,9 +1,7 @@
 //Contains Home View controller and directives
 'use strict';
 
-var homeView = angular.module('careApp.home', ['ngRoute']);
-
-var detection = angular.module('careApp.face',[]);
+var detection = angular.module('careApp.face',['ngRoute']);
 
 detection.controller('DetectionCtrl', function($scope,DocumentService){
     var webCamVideo = document.getElementById('webCamVideo'),
@@ -29,10 +27,21 @@ detection.controller('DetectionCtrl', function($scope,DocumentService){
         webCamStream = null,
         streaming = false;
 
+    $scope.docArray =[]
+
     //Saves all user images to userfaces directory
     $scope.saveFaceToDirectory = function(filename,imgString){
         var imgData = imgString.replace(/^data:image\/png;base64,/, "");
-        DocumentService.saveDocument("docId",  imgData);
+        DocumentService.saveDocument("docId",  imgData).then(function(res){
+            angular.forEach(res,function(obj,index){
+                var obj= {
+                    "documentId":obj.documentId,
+                    "documentContent":"data:image/png;base64,"+obj.documentContent
+                }
+              console.log("dddd",obj);
+                $scope.docArray.push(obj);
+            })
+        });
     };
     //Status message array
     $scope.statusContainer = [];
