@@ -71,27 +71,7 @@ detection.controller('DetectionCtrl', function($scope,DocumentService){
     //Takes picture in intervals
 
     $scope.saveImage = function(){
-
-        var i= 1,
-
-            interval =  window.setInterval(function(){
-
-                if(i < NO_OF_CAM_SHOTS){
-
-                    //calculating image index from 0, i-1
-
-                    $scope.takepicture(i,photoList[i-1],canvasFaceList[i-1]);
-
-                    i = i+1;
-
-                }else{
-
-                    window.clearInterval(interval);
-
-                }
-
-            },2000);
-
+        saveFaceToDirectory();
     };
 
 
