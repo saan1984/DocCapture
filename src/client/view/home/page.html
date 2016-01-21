@@ -69,18 +69,18 @@
             </div>
             <video id="webCamVideo" autoplay class="center-block" controls></video>
             <input type="text" placeholder="Enter Name Of the Document." ng-model="userName" id="userName" class="form-control" >
-            <button type="submit" class="btn col-lg-3 btn-success face-btn" id="captureButton" ng-click="makeClicks($event)">
-               <span class="glyphicon glyphicon-camera"></span>
-               Capture User
-            </button>
-            <button type="submit" class="btn col-lg-3 btn-warning face-btn" id="stopButton" ng-click="stopWebCamera($event)">
-               <span class="glyphicon glyphicon-erase"></span>
-               Stop WebCam
-            </button>
-            <button type="submit" class="btn col-lg-3 btn-warning face-btn" id="startButton" ng-click="startWebCamera($event)">
-               <span class="glyphicon glyphicon-erase"></span>
-               Start WebCam
-            </button>
+            <md-button type="submit" class="md-fab" ng-click="makeClicks($event)">
+               <md-icon md-font-icon="material-icons glyphicon glyphicon-camera my-icon"></md-icon>
+               <!--Capture User-->
+            </md-button>
+            <!--<button type="submit" class="btn col-lg-3 btn-warning face-btn" id="stopButton" ng-click="stopWebCamera($event)">-->
+            <!--<span class="glyphicon glyphicon-erase"></span>-->
+            <!--Stop WebCam-->
+            <!--</button>-->
+            <!--<button type="submit" class="btn col-lg-3 btn-warning face-btn" id="startButton" ng-click="startWebCamera($event)">-->
+            <!--<span class="glyphicon glyphicon-erase"></span>-->
+            <!--Start WebCam-->
+            <!--</button>-->
             <button type="submit" class="btn col-lg-3 btn-warning face-btn" id="clearButton">
                <span class="glyphicon glyphicon-erase"></span>
                Clear
@@ -91,21 +91,21 @@
                <div class="col-xs-2">
                   <canvas id="canvasFace1" class="canvasFace"></canvas>
                </div>
-               <div class="col-xs-2">
-                  <canvas id="canvasFace2" class="canvasFace"></canvas>
-               </div>
-               <div class="col-xs-2">
-                  <canvas id="canvasFace3" class="canvasFace"></canvas>
-               </div>
-               <div class="col-xs-2">
-                  <canvas id="canvasFace4" class="canvasFace"></canvas>
-               </div>
-               <div class="col-xs-2">
-                  <canvas id="canvasFace5" class="canvasFace"></canvas>
-               </div>
-               <div class="col-xs-2">
-                  <canvas id="canvasFace6" class="canvasFace"></canvas>
-               </div>
+               <!--<div class="col-xs-2">-->
+               <!--<canvas id="canvasFace2" class="canvasFace"></canvas>-->
+               <!--</div>-->
+               <!--<div class="col-xs-2">-->
+               <!--<canvas id="canvasFace3" class="canvasFace"></canvas>-->
+               <!--</div>-->
+               <!--<div class="col-xs-2">-->
+               <!--<canvas id="canvasFace4" class="canvasFace"></canvas>-->
+               <!--</div>-->
+               <!--<div class="col-xs-2">-->
+               <!--<canvas id="canvasFace5" class="canvasFace"></canvas>-->
+               <!--</div>-->
+               <!--<div class="col-xs-2">-->
+               <!--<canvas id="canvasFace6" class="canvasFace"></canvas>-->
+               <!--</div>-->
             </div>
          </form>
       </div>
