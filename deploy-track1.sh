@@ -1,8 +1,8 @@
-docker stop docker_nodejs_careapp
-docker rm docker_nodejs_careapp
-rm -rf careapp
-unzip careapp.zip -d careapp
-cd careapp
-docker build -t docker-careapp .
-docker run -d -p 3000:3000 --name docker_nodejs_careapp docker-careapp
-docker logs -f docker_nodejs_careapp
+docker stop docker-track1
+docker rm docker-track1
+rm -rf docker-track1
+unzip docker-track1.zip -d docker-track1
+cd docker-track1
+docker build -t docker-track1 .
+docker run -d -p 9000:9000 --name docker-track1 docker-track1
+docker logs -f docker-track1

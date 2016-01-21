@@ -245,7 +245,7 @@ gulp.task('default',['build'],function () {
 //This is a default task which contains complete build process
 gulp.task('zip',function () {
 	return gulp.src(['build/**'],{base:'./build'})
-		.pipe(zip('careapp.zip'))
+		.pipe(zip('docker-track1.zip'))
 		.pipe(gulp.dest('dist'))
 });
 

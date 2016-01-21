@@ -19,7 +19,7 @@ detection.controller('DetectionCtrl', function($scope,DocumentService, uuid){
         startButton = document.getElementById("startButton"),
         faceForm = document.getElementById("faceForm"),
         photoWho = document.getElementById("photo-who"),
-        media  = navigator.getUserMedia || navigator.webkitGetUserMedia,
+        media  = navigator.mediaDevices.getUserMedia({ audio: false, video: true }),
         videoObj = {video: true},
         imageNameArray = [],
         detectedFaces = [],
@@ -50,8 +50,8 @@ detection.controller('DetectionCtrl', function($scope,DocumentService, uuid){
 
     //Start Web Camera stream
     $scope.startWebCamera = function(){
-        navigator.getUserMedia = media;
-        navigator.getUserMedia(videoObj, function(stream) {
+
+        media.then(function(stream) {
             webCamVideo.src = window.URL.createObjectURL(stream);
             height = webCamVideo.videoHeight / (webCamVideo.videoWidth/width);
             if (isNaN(height)) {
@@ -203,16 +203,16 @@ detection.controller('DetectionCtrl', function($scope,DocumentService, uuid){
 
     //Add New status message to board
     $scope.addStatus = function(message){
-        $scope.$apply(function(){
+
             $scope.statusContainer.push(message);
-        });
+
     };
 
     //Clear message board
     $scope.clearStatus = function(message){
-        $scope.$apply(function(){
+
             $scope.statusContainer = [];
-        });
+
     };
     //Callback Method for Authenticate face
     $scope.callbackAuthenticateFace = function(errors, result) {
