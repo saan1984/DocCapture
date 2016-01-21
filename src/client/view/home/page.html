@@ -9,7 +9,6 @@
       <style>
          .video-container{
             width:100%;
-            padding: 20px 20px 0px 20px;
             background: aliceblue;
             text-align:center;
          }
@@ -21,9 +20,11 @@
          }
          .video-container .output{
             height: 50px;
+            margin-bottom: 12px;
          }
          .video-container .output2{
             height: 100px;
+            display: none;
          }
          .video-container .output2 canvas{
             display: none;
@@ -58,7 +59,7 @@
             <div class="output row">
                <img id="photo1" class="photo">
             </div>
-            <video id="webCamVideo" autoplay class="center-block" controls></video>
+            <video id="webCamVideo" autoplay class="center-block layout-fill" controls></video>
 
             <md-button  type="submit" class="md-fab capture-button" ng-click="makeClicks($event)">
                <md-icon md-font-icon="material-icons glyphicon glyphicon-camera my-icon"></md-icon>
@@ -74,7 +75,7 @@
       </div>
    </div>
    <div class="row ">
-      <table class="table table-default table-compact table-bordered table-alernate">
+      <table class="table table-default table-condensed table-bordered table-alernate">
          <thead>
          <tr>
             <th>DocumentID</th>
