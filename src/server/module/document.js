@@ -1,6 +1,6 @@
-var request = require('request');
-var TinyDB = require('tinydb');
-documentDB = new TinyDB('./documents.db');
+var request = require('request'),
+	TinyDB = require('tinydb'),
+	documentDB = new TinyDB('./documents.db');
 
 module.exports ={
 	saveDocument: function(req,res){
@@ -9,3 +9,5 @@ module.exports ={
 		});
 	}
 };
+
+

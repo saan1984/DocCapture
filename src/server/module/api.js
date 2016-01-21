@@ -1,6 +1,5 @@
 var API={
-
-   CAPTURE: require('./document')
+   DOCUMENT: require('./document')
 };
 
 module.exports = API;

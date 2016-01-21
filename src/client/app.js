@@ -8,5 +8,4 @@ var careApp = angular.module('careApp',[
 	'careApp.face',
 	'careApp.route',
 	'careApp.home'
-
 ]);
